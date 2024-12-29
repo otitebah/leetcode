@@ -1,20 +1,27 @@
 class Solution(object):
     def topKFrequent(self, nums, k):
-        nums.sort()
-        dic = {}
-        st = set(nums)
-        for i in range(len(set)):
+        numsCount = {}
+        i = 0
+        while i < len(nums):
+            if nums[i] in numsCount:
+                numsCount[nums[i]] += 1
+            else:
+                numsCount[nums[i]] = 1
+            i += 1
+        sorte_dic = dict(sorted(numsCount.items(), key=lambda item : item[1], reverse=True))
+        result = []
+        for key, value in sorte_dic.items():
+            if k == len(result):
+                break
+            result.append(key)
+        return (result)
 
-        print ("Dictionary :", dic)
-        print ("set        :", st)
 
 
 
 
 
-
-
-nums = [1,1,1,2,2,3]
+nums = [4,1,-1,2,-1,2,3]
 k = 2
-Solution().topKFrequent(nums, k)
+print(Solution().topKFrequent(nums, k))
 # print ()
