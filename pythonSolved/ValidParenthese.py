@@ -2,7 +2,7 @@ class Solution(object):
     def isValid(self, s):
         check = []
         i = 0
-        while i < len(s):
+        while i < range(len(s)):
             print(i, s[i], check)
             if s[i] == "(" or s[i] == "{" or s[i] == "[":
                 check.append(s[i])
@@ -17,8 +17,9 @@ class Solution(object):
         if len(check):
             return False
         return True
-                
+            
 
 
 
+Solution().isValid()
 
